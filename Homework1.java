@@ -4,3 +4,4 @@ public class Homework1 {
         System.out.println("Привет, мир!");
     }
 }
+//new changes for github. please ignore
