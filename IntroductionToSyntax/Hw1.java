@@ -45,11 +45,14 @@ public class Hw1 {
         // Task 6
         var boxer1 = 78.2;
         var boxer2 = 82.7;
-        System.out.println(boxer1 + boxer2);
-        System.out.println(boxer2 - boxer1);
+        var b1pb2 = boxer1 + boxer2;
+        var b2mb2 = boxer2 - boxer1;
+        System.out.println(b1pb2);
+        System.out.println(b2mb2);
 
         // Task 7
-        System.out.println(boxer2 % boxer1);
+        var b1ob2 = boxer2 % boxer1;
+        System.out.println(b1ob2);
 
         // Task 8
         var workers = 640 / 8;
