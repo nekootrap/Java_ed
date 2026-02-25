@@ -57,7 +57,9 @@ public class Hw1 {
         // Task 8
         var workers = 640 / 8;
         System.out.println("Всего работников в компании — " + workers +  " человек");
-        System.out.println("Если в компании работает " + (workers + 94) + " человек, то всего " + ((workers + 94) * 8) + " часов работы может быть поделено между сотрудниками");
+        workers += 94;
+        var worktime = workers * 8;
+        System.out.println("Если в компании работает " + (workers) + " человек, то всего " + (worktime) + " часов работы может быть поделено между сотрудниками");
 
     }
 
