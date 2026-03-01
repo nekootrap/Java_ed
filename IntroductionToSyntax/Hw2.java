@@ -44,51 +44,51 @@ public class Hw2 {
         System.out.println("За " + 1 + " месяц машина произвела " + p4 + " штук бутылок");
 
         // task 5
-    int total = 120;
-    byte white = 2;
-    byte brown = 4;
-    int perClass = white + brown;
-    int cl = total / perClass;
-    int whiteTotal = cl * white;
-    int brownTotal = cl * brown;
-    System.out.println("В школе, где " + cl + " классов, нужно " + whiteTotal + " банок белой краски и " + brownTotal + " банок коричневой краски");
+        int total = 120;
+        byte white = 2;
+        byte brown = 4;
+        int perClass = white + brown;
+        int cl = total / perClass;
+        int whiteTotal = cl * white;
+        int brownTotal = cl * brown;
+        System.out.println("В школе, где " + cl + " классов, нужно " + whiteTotal + " банок белой краски и " + brownTotal + " банок коричневой краски");
 
-    // task 6
-    int ban = 5 * 80;
-    int milk = 2 * 105;
-    int ice = 2 * 100;
-    int egg = 4 * 70;
-    int grams = ban + milk + ice + egg;
-    int kg = grams / 1000;
-    System.out.println(grams + " грамм");
-    System.out.println(kg + " килограмм");
+        // task 6
+        int ban = 5 * 80;
+        int milk = 2 * 105;
+        int ice = 2 * 100;
+        int egg = 4 * 70;
+        int grams = ban + milk + ice + egg;
+        int kg = grams / 1000;
+        System.out.println(grams + " грамм");
+        System.out.println(kg + " килограмм");
 
-    // task 7
-    int weight = 7 * 1000;
-    int day1 = 250;
-    int day2 = 500;
-    int days1 = weight / day1;
-    int days2 = weight / day2;
-    int avg = (days1 + days2) / 2;
-    System.out.println("При потере 250: " + days1 + " дней");
-    System.out.println("При потере 500: " + days2 + " дней");
-    System.out.println("В среднем: " + avg + " дней");
+        // task 7
+        int weight = 7 * 1000;
+        int day1 = 250;
+        int day2 = 500;
+        int days1 = weight / day1;
+        int days2 = weight / day2;
+        int avg = (days1 + days2) / 2;
+        System.out.println("При потере 250: " + days1 + " дней");
+        System.out.println("При потере 500: " + days2 + " дней");
+        System.out.println("В среднем: " + avg + " дней");
 
-    // task 8
-    int masha = 67760;
-    int denis = 83690;
-    int kristina = 76230;
-    int mashaNew = masha + masha * 10 / 100;
-    int denisNew = denis + denis * 10 / 100;
-    int kristinaNew = kristina + kristina * 10 / 100;
-    int mashaDiff = (mashaNew - masha) * 12;
-    int denisDiff = (denisNew - denis) * 12;
-    int kristinaDiff = (kristinaNew - kristina) * 12;
-    System.out.println("Маша теперь получает " + mashaNew + " рублей. Годовой доход вырос на " + mashaDiff + " рублей");
-    System.out.println("Денис теперь получает " + denisNew + " рублей. Годовой доход вырос на " + denisDiff + " рублей");
-    System.out.println("Кристина теперь получает " + kristinaNew + " рублей. Годовой доход вырос на " + kristinaDiff + " рублей");
+        // task 8
+        int masha = 67760;
+        int denis = 83690;
+        int kristina = 76230;
+        int mashaNew = masha + masha * 10 / 100;
+        int denisNew = denis + denis * 10 / 100;
+        int kristinaNew = kristina + kristina * 10 / 100;
+        int mashaDiff = (mashaNew - masha) * 12;
+        int denisDiff = (denisNew - denis) * 12;
+        int kristinaDiff = (kristinaNew - kristina) * 12;
+        System.out.println("Маша теперь получает " + mashaNew + " рублей. Годовой доход вырос на " + mashaDiff + " рублей");
+        System.out.println("Денис теперь получает " + denisNew + " рублей. Годовой доход вырос на " + denisDiff + " рублей");
+        System.out.println("Кристина теперь получает " + kristinaNew + " рублей. Годовой доход вырос на " + kristinaDiff + " рублей");
 
-            
+                
 
 
 
