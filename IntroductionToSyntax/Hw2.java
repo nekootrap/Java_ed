@@ -4,7 +4,7 @@ public class Hw2 {
         int a = 1000;
         byte b = 0;
         short c = 300;
-        long d = 10000;
+        long d = 10000l;
         double doub = 5.2322;
         float fl = 0.1f;
 
@@ -28,7 +28,7 @@ public class Hw2 {
         byte ludm = 23;
         byte anna = 27;
         byte ek = 30;
-        short paper = 400;
+        short paper = 480;
         int pep = paper / (ludm + anna + ek);
         System.out.println("На каждого ученика рассчитано " +  pep + " листов бумаги");
 
