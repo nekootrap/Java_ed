@@ -9,6 +9,7 @@ public class Hw3 {
             System.out.println("Если возраст человека равен " + age + " то он не достиг совершеннолетия, нужно немного подождать");
         }
 
+        
         // task 2
         int temp = 13;
         if (temp <= 5) {

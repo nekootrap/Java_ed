@@ -63,6 +63,7 @@ public class Hw2 {
         System.out.println(grams + " грамм");
         System.out.println(kg + " килограмм");
 
+        
         // task 7
         int weight = 7 * 1000;
         int day1 = 250;
