@@ -21,7 +21,7 @@ public class Hw2 {
         double three = 2.786;
         short four = 569;
         int five = -159;
-        short six = 27897;
+        var six = 27897;
         byte seven = 67;
 
         // task 3
@@ -34,14 +34,14 @@ public class Hw2 {
 
         // task 4
         int proiz = 16 / 2;
-        int p1 = proiz * 20;
-        int p2 = proiz * 60 * 24;
-        int p3 = p2 * 3;
-        int p4 = p2 * 30;
-        System.out.println("За " + 20 + " минут машина произвела " + p1 + " штук бутылок");
-        System.out.println("За " + 1 + " день машина произвела " + p2 + " штук бутылок");
-        System.out.println("За " + 3 + " дня машина произвела " + p3 + " штук бутылок");
-        System.out.println("За " + 1 + " месяц машина произвела " + p4 + " штук бутылок");
+        int proiz20Min = proiz * 20;
+        int proizDay = proiz * 60 * 24;
+        int proiz3Day = proizDay * 3;
+        int proizMoun = proizDay * 30;
+        System.out.println("За " + 20 + " минут машина произвела " + proiz20Min + " штук бутылок");
+        System.out.println("За " + 1 + " день машина произвела " + proizDay + " штук бутылок");
+        System.out.println("За " + 3 + " дня машина произвела " + proiz3Day + " штук бутылок");
+        System.out.println("За " + 1 + " месяц машина произвела " + proizMoun + " штук бутылок");
 
         // task 5
         int total = 120;
@@ -75,15 +75,15 @@ public class Hw2 {
         System.out.println("В среднем: " + avg + " дней");
 
         // task 8
-        int masha = 67760;
-        int denis = 83690;
-        int kristina = 76230;
-        int mashaNew = masha + masha * 10 / 100;
-        int denisNew = denis + denis * 10 / 100;
-        int kristinaNew = kristina + kristina * 10 / 100;
-        int mashaDiff = (mashaNew - masha) * 12;
-        int denisDiff = (denisNew - denis) * 12;
-        int kristinaDiff = (kristinaNew - kristina) * 12;
+        int masha = 67760; // это не var, а int
+        int denis = 83690; // это не var, а int
+        int kristina = 76230; // это не var, а int
+        int mashaNew = masha + masha * 10 / 100; // это не var, а int
+        int denisNew = denis + denis * 10 / 100; // это не var, а int
+        int kristinaNew = kristina + kristina * 10 / 100; // это не var, а int
+        int mashaDiff = (mashaNew - masha) * 12; // это не var, а int
+        int denisDiff = (denisNew - denis) * 12; // это не var, а int
+        int kristinaDiff = (kristinaNew - kristina) * 12; // это не var, а int
         System.out.println("Маша теперь получает " + mashaNew + " рублей. Годовой доход вырос на " + mashaDiff + " рублей");
         System.out.println("Денис теперь получает " + denisNew + " рублей. Годовой доход вырос на " + denisDiff + " рублей");
         System.out.println("Кристина теперь получает " + kristinaNew + " рублей. Годовой доход вырос на " + kristinaDiff + " рублей");
