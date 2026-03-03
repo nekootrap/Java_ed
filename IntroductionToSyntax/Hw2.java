@@ -4,7 +4,7 @@ public class Hw2 {
         int a = 1000;
         byte b = 0;
         short c = 300;
-        long d = 10000l;
+        long d = 10000L;
         double doub = 5.2322;
         float fl = 0.1f;
 
@@ -17,7 +17,7 @@ public class Hw2 {
 
         // task 2
         float one = 27.12f;
-        long two = 987678965549l;
+        long two = 987678965549L;
         double three = 2.786;
         short four = 569;
         int five = -159;
@@ -54,14 +54,14 @@ public class Hw2 {
         System.out.println("В школе, где " + cl + " классов, нужно " + whiteTotal + " банок белой краски и " + brownTotal + " банок коричневой краски");
 
         // task 6
-        int ban = 5 * 80;
-        int milk = 2 * 105;
-        int ice = 2 * 100;
-        int egg = 4 * 70;
-        int grams = ban + milk + ice + egg;
-        int kg = grams / 1000;
+        float ban = 5 * 80;
+        float milk = 2 * 105;
+        float ice = 2 * 100;
+        float egg = 4 * 70;
+        float grams = ban + milk + ice + egg;
+        float kg = grams / 1000;
         System.out.println(grams + " грамм");
-        System.out.println(kg + " килограмм");
+        System.out.printf("%.2f килограмм\n", kg);
 
         
         // task 7
@@ -76,18 +76,18 @@ public class Hw2 {
         System.out.println("В среднем: " + avg + " дней");
 
         // task 8
-        int masha = 67760; // это не var, а int
-        int denis = 83690; // это не var, а int
-        int kristina = 76230; // это не var, а int
-        int mashaNew = masha + masha * 10 / 100; // это не var, а int
-        int denisNew = denis + denis * 10 / 100; // это не var, а int
-        int kristinaNew = kristina + kristina * 10 / 100; // это не var, а int
-        int mashaDiff = (mashaNew - masha) * 12; // это не var, а int
-        int denisDiff = (denisNew - denis) * 12; // это не var, а int
-        int kristinaDiff = (kristinaNew - kristina) * 12; // это не var, а int
-        System.out.println("Маша теперь получает " + mashaNew + " рублей. Годовой доход вырос на " + mashaDiff + " рублей");
-        System.out.println("Денис теперь получает " + denisNew + " рублей. Годовой доход вырос на " + denisDiff + " рублей");
-        System.out.println("Кристина теперь получает " + kristinaNew + " рублей. Годовой доход вырос на " + kristinaDiff + " рублей");
+        float masha = 67760; 
+        float denis = 83690; 
+        float  kristina = 76230; 
+        float mashaNew = masha + masha * 10 / 100; 
+        float denisNew = denis + denis * 10 / 100; 
+        float kristinaNew = kristina + kristina * 10 / 100; 
+        float mashaDiff = (mashaNew - masha) * 12; 
+        float denisDiff = (denisNew - denis) * 12; 
+        float kristinaDiff = (kristinaNew - kristina) * 12; 
+        System.out.printf("Маша теперь получает %.2f рублей. Годовой доход вырос на %.2f рублей\n", mashaNew, mashaDiff );
+        System.out.printf("Денис теперь получает %.2f рублей. Годовой доход вырос на %.2f рублей\n", denisNew, denisDiff);
+        System.out.printf("Кристина теперь получает %.2f рублей. Годовой доход вырос на %.2f рублей\n", kristinaNew, kristinaDiff);
 
                 
 
