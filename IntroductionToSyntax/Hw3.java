@@ -39,18 +39,12 @@ public class Hw3 {
 
         // task 5
         int childAge = 12;
-        boolean hasAdult = true;
         if (childAge < 5) {
             System.out.println("Если возраст ребенка равен " + childAge + ", то ему нельзя кататься на аттракционе");
         } else if (childAge >= 5 && childAge <= 14) {
-            if (hasAdult) {
-                System.out.println("Если возраст ребенка равен " + childAge + ", то ему можно кататься на аттракционе в сопровождении взрослого");
-            } else {
-                System.out.println("Если возраст ребенка равен " + childAge + ", то ему нельзя кататься на аттракционе без сопровождения взрослого");
+            System.out.println("Если возраст ребенка равен " + childAge + ", то ему можно кататься на аттракционе в сопровождении взрослого");
             }
-        } else {
-            System.out.println("Если возраст ребенка равен " + childAge + ", то ему можно кататься на аттракционе без сопровождения взрослого");
-        }
+    
 
         // task 6
         int seats = 60;
