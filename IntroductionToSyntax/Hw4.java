@@ -23,18 +23,23 @@ public class Hw4 {
 
         // task 3
         int year = 2023;
+        boolean isLeap = false;
 
-        if (year <= 1584) {
-            System.out.println(year + " год не является високосным");
-        } else if (year % 400 == 0) {
-            System.out.println(year + " год является високосным");
-        } else if (year % 100 == 0) {
-            System.out.println(year + " год не является високосным");
-        } else if (year % 4 == 0) {
+        if (year > 1584) {
+            if (year % 400 == 0) {
+                isLeap = true;
+            } else if (year % 100 == 0) {
+                isLeap = false;
+            } else if (year % 4 == 0) {
+                isLeap = true;
+            }
+        }
+
+        if (isLeap) {
             System.out.println(year + " год является високосным");
         } else {
             System.out.println(year + " год не является високосным");
-}
+        }
 
         // task 4
         int deliveryDistance = 95;
