@@ -14,21 +14,17 @@ public class Hw11 {
         }
     }
 
-    public static void printAppVersion(int clientOS, int clientDeviceYear) {
-        int currentYear = LocalDate.now().getYear();
-        
-        if (clientOS == 0) {
-            if (clientDeviceYear < currentYear) {
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-            } else {
-                System.out.println("Установите версию приложения для iOS по ссылке");
-            }
-        } else if (clientOS == 1) {
-            if (clientDeviceYear < currentYear) {
-                System.out.println("Установите облегченную версию приложения для Android по ссылке");
-            } else {
-                System.out.println("Установите версию приложения для Android по ссылке");
-            }
+    public static void recommendAppVersion(int clientOS, int clientDeviceYear) {
+        int deviceYearThreshold = 2015;
+
+        if (clientOS == 0 && clientDeviceYear >= deviceYearThreshold) {
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        } else if (clientOS == 0 && clientDeviceYear < deviceYearThreshold) {
+            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+        } else if (clientOS == 1 && clientDeviceYear >= deviceYearThreshold) {
+            System.out.println("Установите версию приложения для Android по ссылке");
+        } else if (clientOS == 1 && clientDeviceYear < deviceYearThreshold) {
+            System.out.println("Установите облегченную версию приложения для Android по ссылке");
         }
     }
 
@@ -52,11 +48,11 @@ public class Hw11 {
         checkLeapYear(2020);
 
         int currentYear = LocalDate.now().getYear();
-        printAppVersion(0, currentYear);
+        recommendAppVersion(0, currentYear);
 
         int deliveryDistance = 42;
         int days = calculateDeliveryDays(deliveryDistance);
-        
+
         if (days == 0) {
             System.out.println("Доставки нет");
         } else {
