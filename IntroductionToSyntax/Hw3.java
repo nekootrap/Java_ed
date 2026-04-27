@@ -9,6 +9,7 @@ public class Hw3 {
             System.out.println("Если возраст человека равен " + age + " то он не достиг совершеннолетия, нужно немного подождать");
         }
 
+        
         // task 2
         int temp = 13;
         if (temp <= 5) {
@@ -17,7 +18,6 @@ public class Hw3 {
             System.out.println("На улице " + temp + " градусов, можно идти без шапки");
         }
 
-
         // task 3
         int speed = 50;
         if (speed >= 60){
@@ -25,7 +25,6 @@ public class Hw3 {
         } else {
             System.out.println("Если скорость " + speed +  " то можно ездить спокойно");
         }
-
 
         // task 4
         int age4 = 10;
@@ -41,18 +40,12 @@ public class Hw3 {
 
         // task 5
         int childAge = 12;
-        boolean hasAdult = true;
         if (childAge < 5) {
             System.out.println("Если возраст ребенка равен " + childAge + ", то ему нельзя кататься на аттракционе");
         } else if (childAge >= 5 && childAge <= 14) {
-            if (hasAdult) {
-                System.out.println("Если возраст ребенка равен " + childAge + ", то ему можно кататься на аттракционе в сопровождении взрослого");
-            } else {
-                System.out.println("Если возраст ребенка равен " + childAge + ", то ему нельзя кататься на аттракционе без сопровождения взрослого");
+            System.out.println("Если возраст ребенка равен " + childAge + ", то ему можно кататься на аттракционе в сопровождении взрослого");
             }
-        } else {
-            System.out.println("Если возраст ребенка равен " + childAge + ", то ему можно кататься на аттракционе без сопровождения взрослого");
-        }
+    
 
         // task 6
         int seats = 60;

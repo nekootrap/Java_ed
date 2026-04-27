@@ -7,6 +7,7 @@ public class Hw1 {
         var paper = 763789;
         System.out.println(dog + " " + cat + " " + paper);
         
+        
         // Task 2
         dog += 4;
         cat += 4;
