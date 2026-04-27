@@ -76,16 +76,16 @@ public class Hw2 {
         System.out.println("В среднем: " + avg + " дней");
 
         // task 8
-        float masha = 67760; 
-        float denis = 83690; 
-        float  kristina = 76230; 
+        int masha = 67760; 
+        int denis = 83690; 
+        int kristina = 76230; 
         float mashaNew = masha + masha * 10 / 100; 
         float denisNew = denis + denis * 10 / 100; 
         float kristinaNew = kristina + kristina * 10 / 100; 
         float mashaDiff = (mashaNew - masha) * 12; 
         float denisDiff = (denisNew - denis) * 12; 
-        float kristinaDiff = (kristinaNew - kristina) * 12; 
-        System.out.printf("Маша теперь получает %.2f рублей. Годовой доход вырос на %.2f рублей\n", mashaNew, mashaDiff );
+        float kristinaDiff = (kristinaNew - kristina) * 12;
+        System.out.printf("Маша теперь получает %.2f рублей. Годовой доход вырос на %.2f рублей\n", mashaNew,  mashaDiff);
         System.out.printf("Денис теперь получает %.2f рублей. Годовой доход вырос на %.2f рублей\n", denisNew, denisDiff);
         System.out.printf("Кристина теперь получает %.2f рублей. Годовой доход вырос на %.2f рублей\n", kristinaNew, kristinaDiff);
 
