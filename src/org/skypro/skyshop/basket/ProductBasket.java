@@ -1,9 +1,10 @@
 package org.skypro.skyshop.basket;
+import java.util.Arrays;
 
 import org.skypro.skyshop.product.Product;
 
 public class ProductBasket {
-    private Product[] basket = new Product[5]; 
+    private Product[] basket = new Product[10]; 
     private int count = 0; 
     private int isSpecialProduct = 0;
 
@@ -58,9 +59,6 @@ public class ProductBasket {
     }
 
     public void clearBasket() {
-        for (int i = 0; i < basket.length; i++) {
-            basket[i] = null;
-        }
-        count = 0;
+        Arrays.fill(basket, null);
     }
 }
