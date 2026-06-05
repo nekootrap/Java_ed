@@ -4,7 +4,15 @@ public abstract class Product implements Searchable{
     private String productName;
 
     public Product(String productName) {
-        this.productName = productName;
+        try {
+            if (productName == null || productName.isBlank()) {
+                throw new IllegalArgumentException("Название продукта не может быть пустой строкой или null");
+            }
+            this.productName = productName;
+        } catch (IllegalArgumentException e) {
+            System.out.println("Ошибка создания продукта: " + e.getMessage());
+            throw e;
+        } 
     }
 
     public String getProductName() {

@@ -16,6 +16,35 @@ public class SearchEngine {
         }
     }
 
+    public Searchable goSearch(String search) throws BestResultNotFound{
+        Searchable bestMatch = null;
+        int maxCount = -1;
+
+        for (Searchable item : items) {
+            if (item == null) {
+                continue; 
+            }
+            String term = item.getSearchTerm();
+            int count = 0;
+            int index = 0;
+            
+            while ((index = term.indexOf(search, index)) != -1) {
+                count++;
+                index += search.length();
+            }
+
+            if (count > maxCount & count > 0) {
+                maxCount = count;
+                bestMatch = item;
+            }
+        }
+        if (bestMatch == null) {
+            throw new BestResultNotFound("Не найдено подходящих результатов для запроса: \"" + search + "\"");
+        }
+
+        return bestMatch;
+    }
+
     public Searchable[] search(String query) {
         Searchable[] results = new Searchable[5]; 
         int resultCount = 0;
