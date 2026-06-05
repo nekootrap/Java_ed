@@ -51,5 +51,5 @@ public class App {
 
         System.out.println("Ищем 'Молоко' в пустой корзине: " + basket.checkName("Молоко"));
   
-    }
+   }
 }
