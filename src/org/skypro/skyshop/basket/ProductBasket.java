@@ -5,6 +5,7 @@ import org.skypro.skyshop.product.Product;
 public class ProductBasket {
     private Product[] basket = new Product[5]; 
     private int count = 0; 
+    private int isSpecialProduct = 0;
 
     public ProductBasket() {
     }
@@ -21,9 +22,15 @@ public class ProductBasket {
     public int getSumCost() {
         int sumCost = 0;
         for (int i = 0; i < count; i++) {
-            sumCost += basket[i].getProductCost();
+            sumCost += basket[i].getPrice();
         }
         return sumCost;
+    }
+
+    public void isSpecialProductCount(Product product) {
+        if (product.isSpecial()) {
+            isSpecialProduct += 1;
+        }
     }
 
     public void printBasket() {
@@ -33,9 +40,12 @@ public class ProductBasket {
         }
 
         for (int i = 0; i < count; i++) {
-            System.out.println(basket[i].getProductName() + ": " + basket[i].getProductCost());
+            isSpecialProductCount(basket[i]);
+            System.out.println(basket[i].toString());
         }
         System.out.println("Итого: " + getSumCost());
+        System.out.println("Специальных товаров: " + isSpecialProduct);
+
     }
 
     public boolean checkName(String nameProduct) {
