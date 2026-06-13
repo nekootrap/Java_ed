@@ -1,5 +1,7 @@
 package org.skypro.skyshop.product;
 
+import java.util.ArrayList;
+
 public class SearchEngine {
     private Searchable[] items;
     private int count;
@@ -45,20 +47,15 @@ public class SearchEngine {
         return bestMatch;
     }
 
-    public Searchable[] search(String query) {
-        Searchable[] results = new Searchable[5]; 
-        int resultCount = 0;
+    public ArrayList<Searchable> search(String query) {
+        ArrayList<Searchable> results = new ArrayList<>(); 
 
         for (int i = 0; i < count; i++) {
             Searchable item = items[i];
             
             if (item.getSearchTerm().contains(query)) {
-                results[resultCount] = item;
-                resultCount++;
+                results.add(item);
                 
-                if (resultCount >= 5) {
-                    break;
-                }
             }
         }
 

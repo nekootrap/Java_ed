@@ -1,5 +1,6 @@
 package org.skypro.skyshop;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.skypro.skyshop.basket.ProductBasket;
@@ -74,19 +75,35 @@ public class App {
         s1.add(a1);
         s1.add(a2);
 
-        try {
-            Searchable result = s1.goSearch("Шокола");
-            System.out.println("Найден лучший результат: " + result.getSearchTerm());
-        } catch (BestResultNotFound e) {
-            System.out.println("Ошибка поиска: " + e.getMessage());
-        }
+        basket.printBasket();
+        System.out.println(basket.delProduct("Шоколад"));
+        basket.printBasket();
+        System.out.println(basket.delProduct("Chocholate"));
+        basket.printBasket();
 
-        try {
-            Searchable result = s1.goSearch("Футболка");
-            System.out.println("Найден лучший результат: " + result.getSearchTerm());
-        } catch (BestResultNotFound e) {
-            System.out.println("Ошибка поиска: " + e.getMessage());
-        }
+        // try {
+        //     Searchable result = s1.goSearch("Шокола");
+        //     System.out.println("Найден лучший результат: " + result.getSearchTerm());
+        // } catch (BestResultNotFound e) {
+        //     System.out.println("Ошибка поиска: " + e.getMessage());
+        // }
+
+        // try {
+        //     Searchable result = s1.goSearch("Футболка");
+        //     System.out.println("Найден лучший результат: " + result.getSearchTerm());
+        // } catch (BestResultNotFound e) {
+        //     System.out.println("Ошибка поиска: " + e.getMessage());
+        // }
+
+    ArrayList<Searchable> results1 = s1.search("Творог");
+    for (Searchable item : results1) {
+        System.out.println(item.getStringRepresentation());
+    }
+
+    ArrayList<Searchable> results2 = s1.search("Молоко");
+    for (Searchable item : results2) {
+            System.out.println(item.getStringRepresentation());
+    }
     }
 
     
