@@ -1,5 +1,9 @@
 package org.skypro.skyshop.product;
 
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.TreeMap; // TreeMap автоматически сортирует ключи (имена) по алфавиту
+
 public class SearchEngine {
     private Searchable[] items;
     private int count;
@@ -16,7 +20,7 @@ public class SearchEngine {
         }
     }
 
-    public Searchable goSearch(String search) throws BestResultNotFound{
+    public Searchable goSearch(String search) throws BestResultNotFound {
         Searchable bestMatch = null;
         int maxCount = -1;
 
@@ -33,11 +37,12 @@ public class SearchEngine {
                 index += search.length();
             }
 
-            if (count > maxCount & count > 0) {
+            if (count > maxCount && count > 0) { 
                 maxCount = count;
                 bestMatch = item;
             }
         }
+
         if (bestMatch == null) {
             throw new BestResultNotFound("Не найдено подходящих результатов для запроса: \"" + search + "\"");
         }
@@ -45,20 +50,14 @@ public class SearchEngine {
         return bestMatch;
     }
 
-    public Searchable[] search(String query) {
-        Searchable[] results = new Searchable[5]; 
-        int resultCount = 0;
+    public Map<String, Searchable> search(String query) {
+        Map<String, Searchable> results = new TreeMap<>(); 
 
         for (int i = 0; i < count; i++) {
             Searchable item = items[i];
             
-            if (item.getSearchTerm().contains(query)) {
-                results[resultCount] = item;
-                resultCount++;
-                
-                if (resultCount >= 5) {
-                    break;
-                }
+            if (item != null && item.getSearchTerm().contains(query)) {
+                results.put(item.getName(), item);
             }
         }
 
