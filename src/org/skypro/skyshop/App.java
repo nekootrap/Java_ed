@@ -1,8 +1,6 @@
 package org.skypro.skyshop;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Map;
+import java.util.Set;
 
 import org.skypro.skyshop.basket.ProductBasket;
 import org.skypro.skyshop.product.Article;
@@ -41,7 +39,7 @@ public class App {
         } catch (IllegalArgumentException e) {}
         
         try {
-            Product p4 = new SimpleProduct("Сыр", 100);
+            Product p4 = new SimpleProduct("Творог", 100);
             basket.addProduct("Иван",p4);
             s1.add(p4);
         } catch (IllegalArgumentException e) {}
@@ -96,21 +94,30 @@ public class App {
             System.out.println("Ошибка поиска: " + e.getMessage());
         }
 
-    Map<String, Searchable> results1 = s1.search("Твор");
+    Set<Searchable> results = s1.search("Твор");
 
-    for (Map.Entry<String, Searchable> entry : results1.entrySet()) {
-        Searchable item = entry.getValue(); 
+    if (results.isEmpty()) {
+        System.out.println("Ничего не найдено.");
+    } else {
+        System.out.println("Результаты поиска (отсортированы по длине имени):");
         
-        System.out.println(item.getStringRepresentation());
+        for (Searchable item : results) {
+            System.out.println(item.getStringRepresentation()); 
+        }
     }
 
-    Map<String, Searchable> results2 = s1.search("Молоко");
+    Set<Searchable> results2 = s1.search("Молоко");
 
-   for (Map.Entry<String, Searchable> entry : results2.entrySet()) {
-        Searchable item = entry.getValue(); 
-        System.out.println(item.getStringRepresentation());
+    if (results2.isEmpty()) {
+        System.out.println("Ничего не найдено.");
+    } else {
+        System.out.println("Результаты поиска (отсортированы по длине имени):");
         
+        for (Searchable item : results2) {
+            System.out.println(item.getStringRepresentation()); 
+        }
     }
+
 
     
     }
