@@ -108,7 +108,6 @@ public class App {
 
    for (Map.Entry<String, Searchable> entry : results2.entrySet()) {
         Searchable item = entry.getValue(); 
-        
         System.out.println(item.getStringRepresentation());
         
     }
