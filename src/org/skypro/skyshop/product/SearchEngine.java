@@ -1,23 +1,19 @@
 package org.skypro.skyshop.product;
 
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.TreeMap; // TreeMap автоматически сортирует ключи (имена) по алфавиту
+import java.util.Comparator; // Добавляем импорт для компаратора
+import java.util.HashSet; 
+import java.util.Set;    
+import java.util.TreeSet; // Заменяем TreeMap на TreeSet
 
 public class SearchEngine {
-    private Searchable[] items;
-    private int count;
+    private Set<Searchable> items; 
 
     public SearchEngine(int size) {
-        this.items = new Searchable[size];
-        this.count = 0;
+        this.items = new HashSet<>(size);
     }
 
     public void add(Searchable item) {
-        if (count < items.length) {
-            items[count] = item;
-            count++;
-        }
+        items.add(item);
     }
 
     public Searchable goSearch(String search) throws BestResultNotFound {
@@ -25,9 +21,8 @@ public class SearchEngine {
         int maxCount = -1;
 
         for (Searchable item : items) {
-            if (item == null) {
-                continue; 
-            }
+            if (item == null) continue; 
+            
             String term = item.getSearchTerm();
             int count = 0;
             int index = 0;
@@ -50,14 +45,26 @@ public class SearchEngine {
         return bestMatch;
     }
 
-    public Map<String, Searchable> search(String query) {
-        Map<String, Searchable> results = new TreeMap<>(); 
+    public Set<Searchable> search(String query) {
+        Set<Searchable> results = new TreeSet<>(new Comparator<Searchable>() {
+            @Override
+            public int compare(Searchable o1, Searchable o2) {
+                String name1 = o1.getName();
+                String name2 = o2.getName();
 
-        for (int i = 0; i < count; i++) {
-            Searchable item = items[i];
-            
+                int lengthComparison = Integer.compare(name2.length(), name1.length());
+
+                if (lengthComparison == 0) {
+                    return name1.compareTo(name2);
+                }
+
+                return lengthComparison;
+            }
+        });
+
+        for (Searchable item : items) {
             if (item != null && item.getSearchTerm().contains(query)) {
-                results.put(item.getName(), item);
+                results.add(item);
             }
         }
 

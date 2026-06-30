@@ -37,4 +37,20 @@ public abstract class Product implements Searchable{
     public abstract boolean isSpecial();
     public abstract int getPrice();
     public abstract String toString();
+
+       
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+         if (o == null || !(o instanceof Product)) return false;
+
+        Product product = (Product) o;
+
+       return java.util.Objects.equals(productName, product.productName);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(productName);
+    }
 }

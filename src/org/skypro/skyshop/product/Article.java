@@ -27,4 +27,20 @@ public class Article implements Searchable{
     public String getName() {
         return titleArticle; 
     }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            
+            if (o == null || getClass() != o.getClass()) return false;
+
+            Article article = (Article) o;
+
+            return java.util.Objects.equals(titleArticle, article.titleArticle);
+        }
+
+        @Override
+        public int hashCode() {
+            return java.util.Objects.hash(titleArticle);
+        }
 }
