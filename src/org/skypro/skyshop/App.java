@@ -63,22 +63,22 @@ public class App {
         } catch (IllegalArgumentException e) {}
         
         try {
-            Product p8 = new SimpleProduct("Творог", 130);
+            Product p8 = new SimpleProduct("Творожная", 130);
             basket.addProduct("Иван",p8);
             s1.add(p8);
         } catch (IllegalArgumentException e) {}
 
-        Article a1 = new Article("Творог", "Творог помогает желудку");
+        Article a1 = new Article("Творог10%", "Творог помогает желудку");
         Article a2 = new Article("Сок", "Сок очень вкусный");
 
         s1.add(a1);
         s1.add(a2);
 
-        basket.printBasket();
+        System.out.println(basket.printBasket());
         System.out.println(basket.delProduct("Шоколад"));
-        basket.printBasket();
+        System.out.println(basket.printBasket());
         System.out.println(basket.delProduct("Chocholate"));
-        basket.printBasket();
+        System.out.println(basket.printBasket());
 
         try {
             Searchable result = s1.goSearch("Шокола");
@@ -94,33 +94,33 @@ public class App {
             System.out.println("Ошибка поиска: " + e.getMessage());
         }
 
-    Set<Searchable> results = s1.search("Твор");
+        Set<Searchable> results = s1.search("Твор");
 
-    if (results.isEmpty()) {
-        System.out.println("Ничего не найдено.");
-    } else {
-        System.out.println("Результаты поиска (отсортированы по длине имени):");
-        
-        for (Searchable item : results) {
-            System.out.println(item.getStringRepresentation()); 
+        if (results.isEmpty()) {
+            System.out.println("Ничего не найдено.");
+        } else {
+            System.out.println("Результаты поиска (отсортированы по длине имени):");
+            
+            for (Searchable item : results) {
+                System.out.println(item.getStringRepresentation()); 
+            }
         }
-    }
 
-    Set<Searchable> results2 = s1.search("Молоко");
+        Set<Searchable> results2 = s1.search("Молоко");
 
-    if (results2.isEmpty()) {
-        System.out.println("Ничего не найдено.");
-    } else {
-        System.out.println("Результаты поиска (отсортированы по длине имени):");
-        
-        for (Searchable item : results2) {
-            System.out.println(item.getStringRepresentation()); 
+        if (results2.isEmpty()) {
+            System.out.println("Ничего не найдено.");
+        } else {
+            System.out.println("Результаты поиска (отсортированы по длине имени):");
+            
+            for (Searchable item : results2) {
+                System.out.println(item.getStringRepresentation()); 
+            }
         }
-    }
 
 
-    
-    }
+        
+        }
 
     
 }
