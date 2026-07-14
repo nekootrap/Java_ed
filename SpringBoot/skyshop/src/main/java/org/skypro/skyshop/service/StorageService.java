@@ -11,6 +11,7 @@ import org.skypro.skyshop.model.product.FixPriceProduct;
 import org.skypro.skyshop.model.product.Product;
 import org.skypro.skyshop.model.product.SimpleProduct;
 import org.springframework.stereotype.Service;
+import java.util.Optional;
 
 @Service
 public class StorageService {
@@ -54,6 +55,10 @@ public class StorageService {
         articleStorage.put(a3.getId(), a3);
 
         return articleStorage;
+    }
+
+    public Optional<Product> getProductById(UUID id) {
+        return Optional.ofNullable(productStorage.get(id));
     }
 
     public Collection<Product> getAllProducts() {
