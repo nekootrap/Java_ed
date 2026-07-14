@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 import java.util.List;
 import java.util.Map;
 
+import org.skypro.skyshop.exception.NoSuchProductException;
 import org.skypro.skyshop.model.basket.BasketItem;
 import org.skypro.skyshop.model.basket.ProductBasket;
 import org.skypro.skyshop.model.basket.UserBasket;
@@ -26,7 +27,7 @@ public class BasketService {
 
     public void addProductToBasket(UUID id) {
         storageService.getProductById(id)
-            .orElseThrow(() -> new IllegalArgumentException("Товар не найден"));
+            .orElseThrow(() -> new NoSuchProductException("Товар не найден"));
         
         productBasket.addProduct(id);
     }
@@ -37,7 +38,7 @@ public class BasketService {
         List<BasketItem> items = basketMap.entrySet().stream()
             .map(entry -> {
                 Product product = storageService.getProductById(entry.getKey())
-                    .orElseThrow(() -> new IllegalStateException("Товар не найден"));
+                    .orElseThrow(() -> new NoSuchProductException("Товар не найден"));
                 
                 return new BasketItem(product, entry.getValue());
             })
